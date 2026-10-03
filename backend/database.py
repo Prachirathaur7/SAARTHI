@@ -1,9 +1,10 @@
+import os 
 import re
 import sqlite3
 import json
 from datetime import datetime, timezone
 
-DB_PATH = "raksha.db"
+DB_PATH = os.getenv("DB_PATH", "raksha.db")
 
 def init_db():
     with sqlite3.connect(DB_PATH) as conn:
